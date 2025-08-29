@@ -1,0 +1,300 @@
+/* ================================
+   PALETA DE COLORES
+   Variables CSS para mantener consistencia
+================================ */
+:root {
+    --gris-claro: #DEDDDD;
+    --azul-marino: #131249;
+    --turquesa: #31A4A7;
+    --blanco-gris: #F1F1F0;
+    --gris-azulado: #A0AFB6;
+    --gris-violaceo: #6B6A89;
+}
+
+/* ================================
+   RESET BÁSICO
+   Elimina márgenes/padding por defecto y setea box-sizing
+================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* ================================
+   BODY / TIPOGRAFÍA GENERAL
+   Fondo, fuente y altura de línea
+================================ */
+body {
+    background-color: var(--blanco-gris);
+    color: var(--azul-marino);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cinzel', serif; /* Tipografía elegante para títulos */
+}
+
+/* ================================
+   HEADER / ENCABEZADO
+   Logo, navegación y estilo general
+================================ */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--azul-marino);
+    color: var(--blanco-gris);
+    padding: 1em 2em;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.header .logo a {
+    display: flex;
+    align-items: center;
+    text-decoration: none; /* quita subrayado */
+    color: var(--gris-claro);
+}
+
+.header .logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.header .logo .logo-text {
+    margin-left: 10px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.header .logo a:hover .logo-text {
+    color: var(--turquesa); /* cambio de color al pasar el mouse */
+}
+
+/* Navegación */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2em;
+}
+
+.nav a {
+    color: var(--blanco-gris);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav a:hover {
+    color: var(--turquesa);
+}
+
+/* ================================
+   FOOTER
+   Contenido y enlaces
+================================ */
+.footer {
+    background-color: var(--azul-marino);
+    color: var(--blanco-gris);
+    text-align: center;
+    padding: 1.5em 2em;
+    margin-top: 2em;
+    box-shadow: 0 -4px 6px rgba(0,0,0,0.1);
+}
+
+.footer-content p {
+    margin-bottom: 0.8em;
+    font-size: 0.9em;
+}
+
+.footer-links {
+    font-family: 'Cinzel', serif;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 1.5em;
+    padding: 0;
+}
+
+.footer-links a {
+    color: var(--blanco-gris);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--turquesa);
+}
+
+/* Responsive footer */
+@media (max-width: 768px) {
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+}
+
+/* ================================
+   CONTAINER / GRID PRINCIPAL
+   Sección hero + contenido
+================================ */
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2em;
+    align-items: center;
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+/* Hero: Imagen destacada */
+.hero img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Texto de contenido */
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 0.3em;
+    color: var(--azul-marino);
+}
+
+.content h2 {
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    color: var(--gris-violaceo);
+}
+
+.content p {
+    font-size: 1em;
+    margin-bottom: 1.5em;
+    color: var(--gris-violaceo);
+}
+
+/* ================================
+   BOTONES
+   Centrado, estilo y hover
+================================ */
+.btn {
+    display: block; /* permite centrar con margin auto */
+    margin: 1em auto 0 auto; /* centrado horizontal con margen superior */
+    background-color: var(--turquesa);
+    color: var(--blanco-gris);
+    padding: 0.8em 1.5em;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+    font-size: 1em;
+}
+
+.btn:hover {
+    background-color: var(--gris-claro);
+    transform: scale(1.05);
+    color: var(--turquesa);
+}
+
+/* ================================
+   SECCIÓN DE MÓDULOS / CURSOS
+   Dos por fila en escritorio, uno en móvil
+================================ */
+section {
+    max-width: 1000px;
+    margin: 2em auto;
+    padding: 0 1em;
+}
+
+section h2 {
+    color: var(--turquesa);
+    font-size: 2em;
+    margin-bottom: 1em;
+    font-family: 'Cinzel', serif;
+}
+
+ul.modules {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 módulos por fila */
+    gap: 1em;
+}
+
+ul.modules li {
+    background-color: var(--gris-claro);
+    margin-bottom: 1em;
+    padding: 1.2em 1em;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+ul.modules li:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+}
+
+ul.modules li h3 {
+    margin-top: 0;
+    color: var(--gris-violaceo);
+    font-size: 1.3em;
+}
+
+ul.modules li p {
+    margin-bottom: 0;
+    color: var(--azul-marino);
+    line-height: 1.5;
+}
+
+/* ================================
+   RESPONSIVE / MÓVILES
+================================ */
+@media (max-width: 768px) {
+
+    /* Header responsive */
+    .header {
+        flex-direction: column;
+        gap: 0.5em;
+        text-align: center;
+    }
+    .nav ul {
+        flex-direction: column;
+        gap: 0.5em;
+    }
+
+    /* Container hero + contenido */
+    .container {
+        grid-template-columns: 1fr;
+    }
+    .hero img {
+        margin-bottom: 1.5em;
+    }
+
+    /* Logo más pequeño en móviles */
+    .header .logo img {
+        height: 40px;
+    }
+
+    /* Sección módulos: 1 por fila */
+    ul.modules {
+        grid-template-columns: 1fr;
+    }
+
+    /* Ajuste tamaños textos y botones */
+    section h2 {
+        font-size: 1.8em;
+    }
+    ul.modules li h3 {
+        font-size: 1.2em;
+    }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+}
