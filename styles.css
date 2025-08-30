@@ -35,7 +35,10 @@ body {
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cinzel', serif; /* Tipografía elegante para títulos */
 }
-
+.titulo-centro {
+    text-align: center;
+  }
+  
 /* ================================
    HEADER / ENCABEZADO
    Logo, navegación y estilo general
@@ -56,6 +59,12 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none; /* quita subrayado */
     color: var(--gris-claro);
 }
+.subjects {
+    text-align: center;
+    list-style: none;   /* saca los puntitos */
+    padding: 0;         /* elimina la sangría de la lista */
+    margin: 0;          /* opcional, para resetear márgenes */
+  }
 
 .header .logo img {
     height: 50px;
