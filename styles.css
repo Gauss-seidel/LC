@@ -27,14 +27,15 @@
 ================================ */
 body {
     background-color: var(--blanco-gris);
+    padding-top: 70px;
     color: var(--azul-marino);
     font-family: Arial, sans-serif;
     line-height: 1.6;
     background-image: url("fondo.png");
-    background-size: cover;       /* cubre toda la pantalla */
-    background-position: center;  /* centra la imagen */
-    background-repeat: no-repeat; /* evita mosaico */
-    background-attachment: fixed; /* efecto parallax */
+    background-size: cover;      
+    background-position: center;  
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
 }
 body::before {
     content: "";
@@ -43,12 +44,12 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255,255,255,0.5); /* blanco semi-transparente */
-    z-index: -1; /* queda detrás del contenido */
+    background-color: rgba(255,255,255,0.5);
+    z-index: -1; 
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Cinzel', serif; /* Tipografía elegante para títulos */
+    font-family: 'Cinzel', serif;
     text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 .titulo-centro {
@@ -65,8 +66,13 @@ h1, h2, h3, h4, h5, h6 {
     align-items: center;
     background-color: var(--azul-marino);
     color: var(--blanco-gris);
-    padding: 1em 2em;
+    padding:0.5em 2em;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    position: fixed;   /* lo hace fijo */
+    top: 0;            /* siempre arriba */
+    left: 0;
+    width: 100%;       
+    z-index: 1000;     
 }
 
 .header .logo a {
@@ -147,6 +153,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--blanco-gris);
     text-decoration: none;
     font-weight: bold;
+    font-size: 0.7em; 
     transition: color 0.3s;
 }
 
@@ -157,8 +164,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Responsive footer */
 @media (max-width: 768px) {
     .footer-links {
-        flex-direction: column;
+        display: flex; 
+        flex-direction: row;
         gap: 0.5em;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.7em; 
     }
 }
 
@@ -285,13 +296,15 @@ ul.modules li p {
 
     /* Header responsive */
     .header {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.5em;
         text-align: center;
+        font-size: 0.8rem ;
     }
     .nav ul {
-        flex-direction: column;
+        flex-direction: row;
         gap: 0.5em;
+        font-size: 0.8em;
     }
 
     /* Container hero + contenido */
