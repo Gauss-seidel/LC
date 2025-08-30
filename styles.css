@@ -30,10 +30,26 @@ body {
     color: var(--azul-marino);
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-image: url("fondo.png");
+    background-size: cover;       /* cubre toda la pantalla */
+    background-position: center;  /* centra la imagen */
+    background-repeat: no-repeat; /* evita mosaico */
+    background-attachment: fixed; /* efecto parallax */
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.5); /* blanco semi-transparente */
+    z-index: -1; /* queda detrás del contenido */
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Cinzel', serif; /* Tipografía elegante para títulos */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
 }
 .titulo-centro {
     text-align: center;
@@ -202,6 +218,7 @@ h1, h2, h3, h4, h5, h6 {
     transition: background-color 0.3s, transform 0.3s;
     text-align: center;
     font-size: 1em;
+    
 }
 
 .btn:hover {
