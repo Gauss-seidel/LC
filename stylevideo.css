@@ -1,0 +1,209 @@
+@import url('style.css');
+
+/* ================================
+   RESET BÁSICO
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================================
+   BODY
+================================ */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--blanco-gris);
+    min-height: 100vh;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+/* ================================
+   Títulos
+================================ */
+h1 {
+    text-align: center;
+    color: var(--azul-marino);
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.video-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--turquesa);
+    font-size: 1.8em;
+    font-weight: 300;
+    font-family: 'Cinzel', serif;
+}
+
+/* ================================
+   Video Sections
+================================ */
+.video-section {
+    margin: 50px 0;
+    background-color: var(--blanco-gris);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: fadeInUp 0.6s ease forwards;
+}
+
+.video-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   YouTube wrapper
+================================ */
+.youtube-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    height: 0;
+    padding-bottom: 56.25%;
+    background: var(--azul-marino);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+}
+
+.youtube-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.youtube-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 2;
+}
+
+/* Loading placeholder */
+.youtube-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    border: 3px solid var(--gris-claro);
+    border-top: 3px solid var(--turquesa);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    z-index: 1;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ================================
+   TikTok wrapper
+================================ */
+.tiktok-wrapper {
+    border-radius: 16px;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.2);
+    transition: transform 0.3s ease;
+    background: #fff;
+    overflow: hidden;
+  }
+  
+  .tiktok-wrapper:hover {
+    transform: scale(1.02);
+  }
+  
+
+.tiktok-wrapper iframe {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ================================
+   Grid para múltiples videos
+================================ */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+/* ================================
+   Animaciones
+================================ */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.video-section:nth-child(2) { animation-delay: 0.1s; }
+.video-section:nth-child(3) { animation-delay: 0.2s; }
+.video-section:nth-child(4) { animation-delay: 0.3s; }
+.video-section:nth-child(5) { animation-delay: 0.4s; }
+
+/* ================================
+   Responsive
+================================ */
+@media (max-width: 768px) {
+    body { padding: 10px; }
+    .container { padding: 20px; border-radius: 10px; }
+    h1 { font-size: 2em; margin-bottom: 30px; }
+    .video-section { padding: 25px; margin: 30px 0; }
+    .video-section h2 { font-size: 1.5em; margin-bottom: 20px; }
+    .videos-grid { grid-template-columns: 1fr; gap: 20px; }
+    .youtube-wrapper, .tiktok-wrapper { max-width: 100%; }
+}
+
+@media (max-width: 480px) {
+    .container { padding: 15px; }
+    h1 { font-size: 1.8em; }
+    .video-section { padding: 20px; }
+    .videos-grid { grid-template-columns: 1fr; gap: 15px; }
+}
+
+/* Scroll suave */
+html { scroll-behavior: smooth; }
+
+/* Footer */
+.footer {
+    width: 100%;          /* Ocupa todo el ancho de la ventana */
+    background-color: var(--azul-marino); /* o el color que quieras */
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
